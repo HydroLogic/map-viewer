@@ -1,0 +1,13 @@
+<div>
+    <div>
+        <select name="" id="" ng-model="configObj" ng-options="obj.url for obj in availableObjs"></select>
+    </div>
+    <hr>
+    <div ng-repeat="layer in layers" class="wms-layer-layer">
+        <h4>{{ layer.name }}</h4>
+        <p>{{ layer.abstract }}</p>
+        <button ng-click="addTestWMS(layer)">Add!</button>
+    </div>
+    
+    
+</div>

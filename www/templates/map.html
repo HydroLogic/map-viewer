@@ -1,0 +1,48 @@
+<div>
+    <div class="map" id="map">
+    </div>
+
+    <div class="layer-switcher" map-id="main-map"></div>
+
+    <div class="layer-add" xng-if="interfaceState.addingLayer == true">
+        <form action="">
+            <div class="form-group">
+                <select ng-model="interfaceState.layerType"
+                    ng-options="item.value as item.name for item in layerTypes" class="form-control">
+                    
+                </select>
+            </div>
+        </form>
+        
+        <div class="wms-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='wms-repos'">
+        </div>
+
+        <div class="osm-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='osm'">
+        </div>
+
+        <div class="mapquest-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='mapquest'">
+        </div>
+
+        <div class="openweathermap-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='openweathermap'">
+        </div>
+
+        
+
+
+    </div>
+    
+
+    <div class="overlay-info">
+        <div>
+        {{ mapState.bounds }} <br>
+        {{ mapState.center }}
+        </div>
+
+        <div>
+            <button class="btn" ng-click="addTest()">xxx</button>
+        </div>
+    </div>
+
+    <div class="overlay-feature"></div>
+
+</div>

@@ -1,0 +1,27 @@
+{
+  "name": "geonote",
+  "version": "0.0.0",
+  "authors": [
+    "Mauro Bianchi <bianchimro@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.16",
+    "angular-route": "~1.2.16",
+    "jquery": "~2.1.0",
+    "underscore": "~1.6.0",
+    "angular-mocks": "~1.2.16",
+    "less": "~1.7.0",
+    "ol3": "https://github.com/openlayers/ol3.git#~3.0.0-beta.5",
+    "bootstrap": "~3.1.1"
+  }
+}
