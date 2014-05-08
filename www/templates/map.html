@@ -1,12 +1,25 @@
 <div>
     <div class="map" id="map">
     </div>
+    
+    <div class="layers-panel">
+        <div class="layer-switcher" map-id="main-map">
+        
+        </div>
+        <div>
+            <button class="btn btn-block btn-primary" ng-click="toggleAdd()">
+                <span ng-if="!interfaceState.addingLayer">Add layer</span>
+                <span ng-if="interfaceState.addingLayer">Close Add layer</span>
+            </button>
+        </div>
+    </div>
 
-    <div class="layer-switcher" map-id="main-map"></div>
-
-    <div class="layer-add" xng-if="interfaceState.addingLayer == true">
+    <div class="layer-add" ng-if="interfaceState.addingLayer == true">
         <form action="">
             <div class="form-group">
+                <label for="">
+                    Choose layer type
+                </label>
                 <select ng-model="interfaceState.layerType"
                     ng-options="item.value as item.name for item in layerTypes" class="form-control">
                     

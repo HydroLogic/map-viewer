@@ -20,6 +20,14 @@
             { name : 'OpenWeatherMap', value : 'openweathermap' },
         ];
 
+
+        $scope.toggleAdd = function(){
+            $timeout(function(){
+                $scope.interfaceState.addingLayer = !$scope.interfaceState.addingLayer;
+            })
+        };
+        
+
         var initBrowser = function(){
             var url = 'map_resources/hillshade.xml'
             var urlBase = 'http://129.206.228.72/cached/hillshade'
