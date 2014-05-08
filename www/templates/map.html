@@ -9,43 +9,48 @@
         <div>
             <button class="btn btn-block btn-primary" ng-click="toggleAdd()">
                 <span ng-if="!interfaceState.addingLayer">Add layer</span>
-                <span ng-if="interfaceState.addingLayer">Close Add layer</span>
+                <span ng-if="interfaceState.addingLayer">Close Add   layer</span>
             </button>
         </div>
     </div>
 
     <div class="layer-add" ng-if="interfaceState.addingLayer == true">
-        <form action="">
-            <div class="form-group">
-                <label for="">
-                    Choose layer type
-                </label>
-                <select ng-model="interfaceState.layerType"
-                    ng-options="item.value as item.name for item in layerTypes" class="form-control">
-                    
-                </select>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Add layer</div>
             </div>
-        </form>
-        
-        <div class="wms-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='wms-repos'">
+            <div class="panel-body">
+                <form action="">
+                    <div class="form-group">
+                        <label for="">
+                            Choose layer type
+                        </label>
+                        <select ng-model="interfaceState.layerType"
+                            ng-options="item.value as item.name for item in layerTypes" class="form-control">
+                            
+                        </select>
+                    </div>
+                </form>
+                <hr>
+                
+                <div class="wms-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='wms-repos'">
+                </div>
+
+                <div class="osm-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='osm'">
+                </div>
+
+                <div class="mapquest-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='mapquest'">
+                </div>
+
+                <div class="openweathermap-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='openweathermap'">
+                </div>
+                
+            </div>
         </div>
-
-        <div class="osm-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='osm'">
-        </div>
-
-        <div class="mapquest-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='mapquest'">
-        </div>
-
-        <div class="openweathermap-layers-browser" map-id="main-map" ng-if="interfaceState.layerType=='openweathermap'">
-        </div>
-
-        
-
-
     </div>
     
 
-    <div class="overlay-info">
+    <div class="overlay-info" ng-if="interfaceState.overlayInfo">
         <div>
         {{ mapState.bounds }} <br>
         {{ mapState.center }}

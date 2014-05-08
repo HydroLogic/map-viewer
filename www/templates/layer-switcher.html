@@ -1,34 +1,51 @@
-<div>
-    <div ng-repeat="layerGroup in groupedLayers">
-        <div ng-if="layerGroup.group">
-            {{ layerGroup.group }}
-            <div ng-repeat="layer in layerGroup.layers">
-            <div class="layerswitcher-layer">
-                <input type="radio" name="{{layerGroup.group }}" 
-                    ng-model="groupedValues[layerGroup.group]" 
-                    ng-value = "layer.name"
-                    ng-change="setVisible(layer)">{{layer.name}}<br>
-                </div>
-            </div>
-        </div>
-        
-        <div ng-if="!layerGroup.group">
-            <div ng-repeat="layer in layerGroup.layers">
-                <div class="layerswitcher-layer">
-                    <input type="checkbox" name="{{layer.name }}" 
-                    ng-model="ungroupedValues[layer.name]" 
-                    ng-value = "true"
-                    ng-change="setVisible(layer)">
-                    {{layer.name}}
-                    <br>
-                    <button class="btn btn-sm btn-danger" ng-click="removeLayer(layer)">remove</button>
 
-                </div>
-
-            </div>
-        </div>
-
-
-        <!---->
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Layers</h3>
     </div>
+    
+    <div ng-repeat="layerGroup in groupedLayers">
+        <!--
+        <div ng-if="layerGroup.group">
+        {{ layerGroup.group }}
+        <ul class="list-group" >
+            <li class="list-group-item" ng-repeat="layer in layerGroup.layers">
+                <div class="">
+                    <input type="radio" name="{{layerGroup.group }}" 
+                        ng-model="groupedValues[layerGroup.group]" 
+                        ng-value = "layer.name"
+                        ng-change="setVisible(layer)">
+                        {{layer.name}}
+                        <br>
+                        <button class="btn btn-sm btn-danger" ng-click="removeLayer(layer)">remove</button>
+                </div>
+            </li>
+        </ul>
+        </div>
+        -->
+
+        <ul class="list-group" xng-if="!layerGroup.group" ui-sortable="sortableOptions" ng-model="layerGroup.layers">
+            <li class="list-group-item" ng-repeat="layer in layerGroup.layers">
+                <div class="handled-content">
+                    <input type="checkbox" name="{{layer.name }}" 
+                        ng-model="ungroupedValues[layer.name]" 
+                        ng-value = "true"
+                        ng-change="setVisible(layer)">
+                            {{layer.name}}
+                        <br>
+                        <button class="btn btn-sm btn-danger" ng-click="removeLayer(layer)">remove</button>
+                        <div class="handle">
+                        
+                        </div>
+                </div>
+            </li>
+        </ul>
+
+
+    </div>
+
+      
+
+
 </div>
+    

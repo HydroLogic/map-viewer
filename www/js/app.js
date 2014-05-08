@@ -1,7 +1,7 @@
 (function(){
     'use strict';
 
-    var angularApp = angular.module('AngularApp', ['ngRoute', 'AngularApp.tiles']);
+    var angularApp = angular.module('AngularApp', ['ngRoute', 'AngularApp.tiles', 'ui.sortable']);
 
 
     angularApp.config(['$routeProvider', function($routeProvider) {

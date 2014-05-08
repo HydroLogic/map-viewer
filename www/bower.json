@@ -21,7 +21,7 @@
     "underscore": "~1.6.0",
     "angular-mocks": "~1.2.16",
     "less": "~1.7.0",
-    "ol3": "https://github.com/openlayers/ol3.git#~3.0.0-beta.5",
-    "bootstrap": "~3.1.1"
+    "bootstrap": "~3.1.1",
+    "angular-ui-sortable": "~0.12.6"
   }
 }
