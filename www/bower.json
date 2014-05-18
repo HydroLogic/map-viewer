@@ -22,6 +22,10 @@
     "angular-mocks": "~1.2.16",
     "less": "~1.7.0",
     "bootstrap": "~3.1.1",
-    "angular-ui-sortable": "~0.12.6"
+    "angular-ui-sortable": "~0.12.6",
+    "angular-animate": "~1.2.16",
+    "animate.css": "~3.1.1",
+    "alertify.js": "~0.3.11",
+    "pouchdb": "~2.2.0"
   }
 }

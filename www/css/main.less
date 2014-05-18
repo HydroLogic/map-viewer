@@ -26,17 +26,29 @@ html, body{
     left:0;
     right:0;
     background:teal;
-    z-index:1000;
+    z-index:100;
+}
+
+
+.controls-toolbar{
+    position:absolute;
+    top:4px;
+    height:50px;
+    padding:10px;
+    right:4px;
+    background:rgba(255, 255, 255, 0.5);
+    z-index:1100;
+    border-radius: 5px;
 }
 
 .overlay-info{
     position:absolute;
-    left:0;
+    left:300;
     bottom:0;
     height:200px;
     right:0;
     background:rgba(0,0,0,.5);
-    z-index:1200;
+    z-index:120;
     color:white;
 
 }
@@ -46,10 +58,10 @@ html, body{
     background-color: rgba(255,255,255,.6);
     padding:3px;
     width:300px;
-    top:0;
-    bottom:0;
+    top:50px;
+    bottom:50px;
     right:0;
-    z-index:1200;
+    z-index:120;
 }
 
 .wms-layers-browser{
@@ -61,9 +73,9 @@ html, body{
     background-color: rgba(200,255,255,.6);
     padding:3px;
     width:400px;
-    top:0;
-    bottom:0;
-    right:306px;
+    top:50px;
+    bottom:50px;
+    right:300px;
     z-index:1200;
     overflow-y: auto;
 }
@@ -77,6 +89,16 @@ html, body{
  border-bottom: solid #ccc 1px;   
 }
 
+
+
+
+
+
+
+
+
+
+
 .handled-content{
     padding-right: 25px;
 }
@@ -87,4 +109,29 @@ html, body{
     height:100%;
     background-color: teal;
     width:25px;
+}
+
+
+
+.layers-panel.ng-hide-remove {
+    -webkit-animation: slideInRight 0.6s;
+    animation: slideInRight 1s;
+}
+ 
+.layers-panel.ng-hide-add {
+    -webkit-animation: slideOutRight 1s;
+    animation: slideOutRight 1s;
+    display: block !important;
+}
+
+
+.downloader{
+    position:absolute;
+    z-index:1200;
+    left:4px;
+    top:50%;
+    bottom:5px;
+    width:300px;
+    background-color: rgba(200,0,0,.3);
+    color:white;
 }

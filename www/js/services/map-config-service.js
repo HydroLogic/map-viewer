@@ -18,10 +18,11 @@
                   //center: ol.proj.transform([37.41, 8.82], 'EPSG:4326', 'EPSG:3857'),
                   zoom: 4,
                   center : [37.41, 8.82],
-                  //extent : extent
+                  extent : extent
 
                 }),
-                extent : extent
+                extent : extent,
+                //projection : 'EPSG:3857'
 
 
             };

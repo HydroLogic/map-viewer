@@ -34,6 +34,11 @@
                     handle : '.handle'
                 };
 
+
+                scope.toggleLayersPanel = function(){
+                    $rootScope.$broadcast('toggleLayersPanel');
+                }
+
                 
 
                 var refresh = function(){

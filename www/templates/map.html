@@ -1,8 +1,20 @@
 <div>
     <div class="map" id="map">
     </div>
+
+    <div class="controls-toolbar">
+        <button class="btn btn-sm btn-default" ng-click="toggleLayersPanel()" ng-class="{'btn-warning' : interfaceState.layersPanel==true}">
+            Layers
+        </button>
+        <button class="btn btn-sm btn-default" ng-click="toggleGeolocation()" ng-class="{'btn-warning' : interfaceState.geolocation==true}">
+            Geolocation
+        </button>
+        <button class="btn btn-sm btn-default" ng-click="downloadTiles()" ng-class="{'btn-warning' : interfaceState.downloadingTiles==true}" ng-disabled="interfaceState.downloadingTiles==true">
+            Download Map
+        </button>
+    </div>
     
-    <div class="layers-panel">
+    <div class="layers-panel" ng-show="interfaceState.layersPanel==true">
         <div class="layer-switcher" map-id="main-map">
         
         </div>
@@ -17,7 +29,9 @@
     <div class="layer-add" ng-if="interfaceState.addingLayer == true">
         <div class="panel panel-info">
             <div class="panel-heading">
-                <div class="panel-title">Add layer</div>
+                <div class="panel-title">Add layer
+
+                </div>
             </div>
             <div class="panel-body">
                 <form action="">
@@ -48,6 +62,25 @@
             </div>
         </div>
     </div>
+
+    <div class="downloader">
+        {{ data.downloading}}
+        <hr>
+        {{c}}
+
+        <div ng-repeat="(c,v) in data.currentDownloads">
+            {{c}} - {{v}}
+            
+        </div>
+        <hr>
+        <h4>Offline layers</h4>
+        <div ng-repeat="l in data.offlineLayers">
+            {{l._id}} - {{l.name}}
+            <button class="btn btn-primary" ng-click="loadOffline(l._id)">Load!</button>
+            
+        </div>
+        
+    </div>
     
 
     <div class="overlay-info" ng-if="interfaceState.overlayInfo">
@@ -55,10 +88,7 @@
         {{ mapState.bounds }} <br>
         {{ mapState.center }}
         </div>
-
-        <div>
-            <button class="btn" ng-click="addTest()">xxx</button>
-        </div>
+        
     </div>
 
     <div class="overlay-feature"></div>

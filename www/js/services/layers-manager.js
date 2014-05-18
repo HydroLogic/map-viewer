@@ -10,7 +10,7 @@
             // Math.random should be unique because of its seeding algorithm.
             // Convert it to base 36 (numbers + letters), and grab the first 9 characters
             // after the decimal.
-            return '_' + Math.random().toString(36).substr(2, 9);
+            return 'I' + Math.random().toString(36).substr(2, 9);
         };
 
         var getLayerFromConfig = function(l){
@@ -20,7 +20,8 @@
             if(l.group){
                 lyr.set('group', l.group);
             }
-            //lyr.extent = mapConfigService.extent;
+            lyr.maxExtent = mapConfigService.extent;
+            lyr.displayOutSideMaxExtent = false;
             return lyr;
         };
 
