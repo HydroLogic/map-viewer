@@ -21,7 +21,7 @@
                 lyr.set('group', l.group);
             }
             lyr.maxExtent = mapConfigService.extent;
-            lyr.displayOutSideMaxExtent = false;
+            lyr.displayOutsideMaxExtent = false;
             return lyr;
         };
 

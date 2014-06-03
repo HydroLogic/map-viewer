@@ -74,6 +74,7 @@
                 .then(function(config){
                     var map = mapsManager.createMap('main-map', config);
                     $scope.map = map;
+                    map.getView().fitExtent(mapConfigService.extent, map.getSize() );
                     layersManager.addLayer('main-map', layersConfigService.fixedLayers[0]);
                     
                     
@@ -95,12 +96,20 @@
         };
 
         var onMove = function(evt){
-            var bounds = $scope.map.getView().calculateExtent($scope.map.getSize());
-            var center = $scope.map.getView().getCenter();
+            var v = $scope.map.getView();
+            var bounds = v.calculateExtent($scope.map.getSize());
+            var bounds4326 = ol.proj.transform(bounds, 'EPSG:3857','EPSG:4326')
+            var center = v.getCenter();
+            var zoom = v.getZoom();
 
             $timeout(function(){
                 $scope.mapState.bounds = bounds; 
+                $scope.mapState.bounds4326 = bounds4326; 
                 $scope.mapState.center = center; 
+                $scope.mapState.zoom = zoom;
+                $scope.mapState.width = (bounds[2] - bounds[0]) / 1000; 
+                $scope.mapState.height = (bounds[3] - bounds[1]) / 1000; 
+
             });
             
         }

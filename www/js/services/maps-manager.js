@@ -7,7 +7,7 @@
         var createMap = function(mapId, config){
             maps[mapId] = new ol.Map(config);
             //fixing map extent
-            var v = maps[mapId].getView();
+            //var v = maps[mapId].getView();
             //var extent = config.extent;
             //v.fitExtent(extent, maps[mapId].getSize() );
             //console.log(extent, maps[mapId].getView().calculateExtent(maps[mapId].getSize()));

@@ -85,8 +85,18 @@
 
     <div class="overlay-info" ng-if="interfaceState.overlayInfo">
         <div>
+        <h4>Bounds</h4>
         {{ mapState.bounds }} <br>
-        {{ mapState.center }}
+        <hr>
+        <h4>Width and height(km)</h4>
+        <b>{{ mapState.width }} x {{ mapState.height }}</b>
+        <hr>
+        <textarea style="color:black" class="form-control">
+            {{ mapState.bounds4326 }}
+        </textarea>
+        <br>
+        Center: {{ mapState.center }} <br>
+        Zoom: {{ mapState.zoom }} <br>
         </div>
         
     </div>
