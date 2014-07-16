@@ -74,8 +74,10 @@
                 .then(function(config){
                     var map = mapsManager.createMap('main-map', config);
                     $scope.map = map;
-                    map.getView().fitExtent(mapConfigService.extent, map.getSize() );
                     layersManager.addLayer('main-map', layersConfigService.fixedLayers[0]);
+                    map.getView().fitExtent(mapConfigService.extent, map.getSize() );
+                    map.getView().setZoom(3)
+                    
                     
                     
 
