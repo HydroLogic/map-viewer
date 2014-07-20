@@ -1,4 +1,4 @@
-html5-angular-base
-==================
+map-viewer
+==========
 
-My base skeleton for html5 apps with angular
+Our internal tool for building map configs
